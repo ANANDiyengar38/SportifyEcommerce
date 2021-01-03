@@ -7,9 +7,10 @@ from django_countries.fields import CountryField
 
 
 CATEGORY_CHOICES = (
-    ('S', 'Shirt'),
-    ('SW', 'Sport wear'),
-    ('OW', 'Outwear')
+    ('TS', 'T-Shirt'),
+    ('SW' ,'Sportswear'),
+    ('FW', 'Footwear'),
+    ('SA','Sports Accessories')
 )
 
 LABEL_CHOICES = (
@@ -43,6 +44,7 @@ class Item(models.Model):
     slug = models.SlugField()
     description = models.TextField()
     image = models.ImageField()
+
 
     def __str__(self):
         return self.title

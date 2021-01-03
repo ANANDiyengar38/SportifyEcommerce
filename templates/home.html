@@ -22,19 +22,23 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">All
+              <a class="nav-link" href="/">All
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
+              <a class="nav-link" href="/home/TS">T-Shirts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
+              <a class="nav-link" href="/home/SW">Sportswears</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
+              <a class="nav-link" href="/home/FW">Footwears</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/home/SA">Sports Accessories</a>
+            </li>
+
 
           </ul>
           <!-- Links -->
@@ -81,7 +85,7 @@
                 </h5>
 
                 <h4 class="font-weight-bold blue-text">
-                  <strong>$
+                  <strong>₹
                   {% if item.discount_price %}
                   {{ item.discount_price }}
                   {% else %}

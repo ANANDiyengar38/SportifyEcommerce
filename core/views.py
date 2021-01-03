@@ -14,6 +14,7 @@ from django.views.generic import ListView, DetailView, View
 
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
 from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
+from django.http import Http404
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -36,7 +37,8 @@ def is_valid_form(values):
             valid = False
     return valid
 
-
+def PaymentSuccess(request,payment_option):
+    return render(request, "PaymentSuccess.html", {'payment_option': payment_option})
 class CheckoutView(View):
     def get(self, *args, **kwargs):
         try:
@@ -344,8 +346,33 @@ class PaymentView(View):
         messages.warning(self.request, "Invalid data received")
         return redirect("/payment/stripe/")
 
-
 class HomeView(ListView):
+    model = Item
+    paginate_by = 10
+    template_name = "home.html"
+    def get(self, request, *args, **kwargs):
+        self.object_list = self.get_queryset()
+        if ('view_filter' in kwargs):
+            queryset = Item.objects.filter(category=kwargs['view_filter']) 
+            if queryset.exists():
+                self.object_list = self.object_list.filter(category=kwargs['view_filter'])
+                print ("OBJ LIST SET")
+            else:
+                raise Http404("No shopping items found in this category")
+        context = self.get_context_data()
+        return self.render_to_response(context)
+
+class HomeViewAll(ListView):
+    model = Item
+    paginate_by = 10
+    template_name = "home.html"
+
+class HomeViewSports(ListView):
+    model = Item
+    paginate_by = 10
+    template_name = "home.html"
+
+class HomeViewFootwears(ListView):
     model = Item
     paginate_by = 10
     template_name = "home.html"

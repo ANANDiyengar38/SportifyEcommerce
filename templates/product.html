@@ -11,7 +11,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          <img src="{{object.image.url}}" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -31,11 +31,11 @@
             <p class="lead">
               {% if object.discount_price %}
               <span class="mr-1">
-                <del>${{ object.price }}</del>
+                <del>₹{{ object.price }}</del>
               </span>
-              <span>${{ object.discount_price }}</span>
+              <span>₹{{ object.discount_price }}</span>
               {% else %}
-              <span>${{ object.price }}</span>
+              <span>₹{{ object.price }}</span>
               {% endif %}
             </p>
 
@@ -79,9 +79,13 @@
 
           <h4 class="my-4 h4">Additional information</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <p>Sporting equipment, also called sporting goods,
+            are the tools, materials, apparel,
+            and gear used to compete in a sport and varies depending on the sport.
+            The equipment ranges from balls, nets, and protective gear like helmets.
+            Sporting equipment can be used as protective gear or as tool used to help the athletes play the sport.
+            Over time,sporting equipment has evolved because sports have started to require more protective gear to prevent injuries.[1] Sporting equipment may be found in any department store
+            .</p>
 
         </div>
         <!--Grid column-->
@@ -95,7 +99,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+          <img src="https://i.pinimg.com/564x/aa/c5/76/aac576f87ad3ea0913ef82fe62f0d837.jpg" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -103,7 +107,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+          <img src="https://i.pinimg.com/564x/5f/5f/9b/5f5f9ba9bf08dfbe18c287db24cca41c.jpg" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -111,7 +115,7 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+          <img src="https://i.pinimg.com/564x/b4/d4/45/b4d445dc10ee1804a8221139b4ede86f.jpg" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
